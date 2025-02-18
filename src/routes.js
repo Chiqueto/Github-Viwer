@@ -29,6 +29,7 @@ export default function Routes() {
           headerStyle: { backgroundColor: "#3498db" },
           headerTintColor: "#fff",
           headerTitleStyle: { fontWeight: "bold" },
+          headerLeft: null,
         }}
       />
       <Stack.Screen
