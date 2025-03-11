@@ -15,21 +15,29 @@ export default function Routes() {
         options={{
           title: "LOGIN",
           headerTitleAlign: "center",
-          headerStyle: { backgroundColor: "#3498db" },
+          headerStyle: {
+            backgroundColor: "#3498db",
+          },
           headerTintColor: "#fff",
-          headerTitleStyle: { fontWeight: "bold" },
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
         }}
       />
       <Stack.Screen
         name="Main"
         component={Main}
         options={{
-          title: "GitHub Viwer",
-          headerTitleAlign: "center",
-          headerStyle: { backgroundColor: "#3498db" },
-          headerTintColor: "#fff",
-          headerTitleStyle: { fontWeight: "bold" },
           headerLeft: null,
+          title: "GitHub VIEWER",
+          headerTitleAlign: "center",
+          headerStyle: {
+            backgroundColor: "#3498db",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
         }}
       />
       <Stack.Screen
@@ -38,9 +46,13 @@ export default function Routes() {
         options={{
           title: "Cadastro de Usuários",
           headerTitleAlign: "center",
-          headerStyle: { backgroundColor: "#3498db" },
+          headerStyle: {
+            backgroundColor: "#3498db",
+          },
           headerTintColor: "#fff",
-          headerTitleStyle: { fontWeight: "bold" },
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
         }}
       />
     </Stack.Navigator>

@@ -15,11 +15,11 @@ const Login = () => {
   const navigation = useNavigation();
 
   const handleLogin = () => {
-    //Aqui vai ser implementado a lógica do login!
-    if (email === "chiqueto" && password === "123") {
+    //aqui vai ser implementado a lógica do login
+    if (email === "" && password === "") {
       navigation.navigate("Main");
     } else {
-      Alert.alert("Erro", "E-mail ou senha inválidos!");
+      Alert.alert("Erro", "E-mail ou senha inválidos");
     }
   };
 
@@ -45,8 +45,6 @@ const Login = () => {
   );
 };
 
-export default Login;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -54,7 +52,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#fff",
   },
-
   input: {
     borderWidth: 1,
     borderColor: "#ccc",
@@ -63,11 +60,10 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     width: "80%",
   },
-
   button: {
     backgroundColor: "#3498db",
-    padding: 10,
     borderRadius: 5,
+    padding: 10,
     width: "80%",
     alignItems: "center",
   },
@@ -76,3 +72,5 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
+
+export default Login;
