@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import { RectButton } from "react-native-gesture-handler";
 
+//Estilos da página Main
 export const Container = styled.View`
   flex: 1;
   padding: 30px;
@@ -21,7 +22,7 @@ export const Input = styled.TextInput.attrs({
   background: #eee;
   border-radius: 4px;
   padding: 0 15px;
-  border: 1px solid #eee;
+  border: 1px solid #ccc;
 `;
 
 export const SubmitButton = styled(RectButton)`
@@ -34,7 +35,9 @@ export const SubmitButton = styled(RectButton)`
   opacity: ${(props) => (props.loading ? 0.7 : 1)};
 `;
 
-export const List = styled.FlatList`
+export const List = styled.FlatList.attrs({
+  showsVerticalScrollIndicator: false,
+})`
   margin-top: 20px;
 `;
 
@@ -85,11 +88,11 @@ export const ProfileButtonText = styled.Text`
   text-transform: uppercase;
 `;
 
-export const Loading = styled.ActivityIndicator.attrs({
-  size: "large",
-  color: "#999",
-})`
-  margin: 30px 0;
+//Estilos da página User
+export const Header = styled.View`
+  padding: 30px;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const AvatarPerfil = styled.Image`
@@ -109,13 +112,15 @@ export const NamePerfil = styled.Text`
 
 export const BioPerfil = styled.Text`
   font-size: 15px;
-  line-height: 20px;
+  line-height: 18px;
   color: #999;
   margin-top: 5px;
   text-align: center;
 `;
 
-export const Stars = styled.FlatList`
+export const Stars = styled.FlatList.attrs({
+  showsVerticalScrollIndicator: false,
+})`
   margin-top: 20px;
 `;
 

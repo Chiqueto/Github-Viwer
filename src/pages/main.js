@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Keyboard, ActivityIndicator } from "react-native";
 import Icon from "@expo/vector-icons/MaterialIcons";
-import api from "../service/api";
+import api from "../services/api";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {
   Container,
@@ -16,7 +16,6 @@ import {
   ProfileButton,
   ProfileButtonText,
 } from "../styles";
-
 export default class Main extends Component {
   state = {
     newUser: "",
@@ -31,7 +30,7 @@ export default class Main extends Component {
     }
   }
 
-  componentDidUpate(_, prevState) {
+  componentDidUpdate(_, prevState) {
     const { users } = this.state;
     if (prevState.users !== users) {
       AsyncStorage.setItem("users", JSON.stringify(users));
@@ -54,6 +53,7 @@ export default class Main extends Component {
         bio: response.data.bio,
         avatar: response.data.avatar_url,
       };
+      console.log(data);
 
       this.setState({
         users: [...users, data],
@@ -83,9 +83,9 @@ export default class Main extends Component {
           />
           <SubmitButton loading={loading} onPress={this.handleAddUser}>
             {loading ? (
-              <ActivityIndicator color="#FFF" />
+              <ActivityIndicator color="#fff" />
             ) : (
-              <Icon name="add" size={20} color="#FFF" />
+              <Icon name="add" size={20} color="#fff" />
             )}
           </SubmitButton>
         </Form>
@@ -104,6 +104,16 @@ export default class Main extends Component {
                 }}
               >
                 <ProfileButtonText>Ver perfil</ProfileButtonText>
+              </ProfileButton>
+              <ProfileButton
+                onPress={() => {
+                  this.setState({
+                    users: users.filter((user) => user.login !== item.login),
+                  });
+                }}
+                style={{ backgroundColor: "#FFC0CB" }}
+              >
+                <ProfileButtonText>Remover</ProfileButtonText>
               </ProfileButton>
             </User>
           )}
